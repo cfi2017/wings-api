@@ -5,7 +5,7 @@ import (
 )
 
 type Api interface {
-	RegisterHandler(name string, handler func())
+	RegisterHandler(name string, handler func(api Api))
 	RegisterBackupStrategy(name string, strategy model.Backup)
 	CallHandler(name string)
 }
